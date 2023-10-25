@@ -53,14 +53,23 @@ int optimalFreelancing(std::vector<unordered_map<string, int>> jobs)
     {
       // note that job in this case refers to  one element of the sorted pair which in this case happens to be a pair
       // so pair.second will in this case be the deadline
-      
+
       if(deadlines.size() == 7) break;
       for(int i = job.second; i >= 1; i--)
         {
+          //so in this case note that the for loop basically iterates over the values of deadline and each step what happens is that the 
+          // deadline of each job is checked if it is equal to the deadline.end(), in this case the .end() returns the iterator to the 
+          // end which in this case is not an element of the set 
+          //lets say the work has a deadline of 3
+          //itll check for the element 3 in the , in this case if the value 3 is not found that will mean that it will return deadlines.end()
+          // in this case the deadlines will have the value of 3 shall be inserted in the unordered_set
+          // if the value is found within the deadlines this will mean that said day has already been taken and therefore cannot be assigned 
           if(deadlines.find(i) == deadlines.end())
           {
             deadlines.insert(i);
             profits -= job.first;
+            // since payments were in negative this will essentially mean that the values will be added
+
             break;
           }
         }
