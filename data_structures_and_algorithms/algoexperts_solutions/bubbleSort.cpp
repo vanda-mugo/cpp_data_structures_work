@@ -35,6 +35,12 @@ vector<int> bubbleSort(vector<int> array) {
   return array;
 }
 
+/*
+point to note is that in the if loop where we have a swap , after each swap the control goes back to the beginning of the loop 
+so in this case each iteration of the for loop solves one swap or one swap betweeen two digits then after this the control goes back to the beginning of 
+the loop then when teh value of the i is equal the value of the array .size()-1 then what happens essentially is that the loop terminates and since a swap will 
+have occured then what occurs is that the while loop takes control and now the value of i goes back to 0*/
+
 
 // solution 2
 #include <vector>
