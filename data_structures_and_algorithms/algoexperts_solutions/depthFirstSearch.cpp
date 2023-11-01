@@ -98,3 +98,13 @@ class Node
 // then E is the number of edges that is like the connection from one node to another 
 
 
+/*
+
+some notes and to revisit the depth first search algorithm
+What is Depth First Search?
+
+Depth First Search (DFS) is a graph traversal algorithm that starts at the root node and explores as far as possible along each branch before backtracking.
+ It is an algorithm for traversing or searching tree or graph data structures. The DFS algorithm traverses a graph in a depth-ward motion and uses a stack to
+  remember to get the next vertex to start a search, when a dead end occurs in any iteration.*/
+
+
