@@ -60,7 +60,7 @@ optimal space and time complexity
 
 
 // solution 2
-/*
+
 
 using namespace std;
 #include <unordered_set>
@@ -85,7 +85,7 @@ vector<vector<string>> semordnilap(vector<string> words) {
   return semordnilapPairs;
 }
 
-*/
+
 
 
 int main()
