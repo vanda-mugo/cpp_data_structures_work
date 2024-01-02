@@ -26,7 +26,8 @@ the aforementionaed run should be encoded as "9A3A"
 // solution 1
 // time complexity 0(N)
 // space complexity 0(N)
-
+#include <string>
+#include <vector>
 using namespace std;
 
 string runLengthEncoding(string str) {

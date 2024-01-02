@@ -6,6 +6,9 @@ obtained by shifting every letter in the input string by k position in the alphe
 note that letters should "wrap" around the alphabet; in other words, the letter z shifted by one returns the letter a.
 */
 
+#include <string>
+#include <iostream>
+
 // solution 1
 using namespace std;
 // constant space complexity 

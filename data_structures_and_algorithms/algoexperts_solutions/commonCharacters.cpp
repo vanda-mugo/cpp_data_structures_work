@@ -8,7 +8,13 @@
 
 
 // solution 1
+#include <iostream>
+#include <string>
+#include <unordered_set>
+#include <vector>
+#include <unordered_map>
 using namespace std;
+
 
 // the time complexity will be 0(N*M) where N is the size of strings and M is the size of the longest string within the strings vector
 // since within each element that is each string in the strings vector we are creating a set therefore we are going to store a max of all the characters within a said string 
@@ -48,7 +54,7 @@ vector<string> commonCharacters(vector<string> strings) {
 
 
 // solution 2
-using namespace std;
+
 
 //for space complexity first we iterate through all the strings
 //for each of the string we generate the set and then we shall go through the set to find the character counts which shall be added to the unordered_set

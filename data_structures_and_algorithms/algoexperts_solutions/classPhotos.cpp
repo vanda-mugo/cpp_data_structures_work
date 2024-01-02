@@ -16,6 +16,8 @@ assume that each class has at least 2 students
 // solution 1 
 #include <vector>
 #include <algorithm>
+#include <string>
+
 using namespace std;
 //using namespace std;
 // this is called a greedy algorithm

@@ -38,6 +38,7 @@ HINT 1
 
 //solution 
 #include <vector>
+#include <string>
 using namespace std;
 
 // Do not edit the class below except
