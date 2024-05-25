@@ -430,7 +430,7 @@ class BST {
         {
           currentNode = currentNode->left;
         }
-        }  
+      }  
     return *this;
   }
 
