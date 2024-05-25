@@ -10,7 +10,9 @@ sample input : "abcdcaf"
 sample output .. the first non repeating character is 'b' and is found at index 1
 
 */
-
+#include <unordered_map>
+#include <iostream>
+#include <string>
 using namespace std;
 
 int firstNonRepeatingCharacter(string string) 

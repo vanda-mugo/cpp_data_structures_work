@@ -37,6 +37,8 @@ if you implement recursively then the complexity is 0(log(N))
 // time complexity 0(log(N)) and space 0(log(N)) space because you are adding frames to the call stack because of the 
 // recursive calls 
 #include <vector>
+#include <cmath>
+
 //using namespace std;
 
 int binarySearchHelper(std::vector<int>array, int target,int leftPointer ,int rightPointer)

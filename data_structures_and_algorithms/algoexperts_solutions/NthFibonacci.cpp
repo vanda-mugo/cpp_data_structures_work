@@ -11,6 +11,7 @@ fibonacci number is F0; therefore getNthFib(1) is equal f0, getNthFib(2) is equa
 // n =2
 
 // solution 1
+#include <map>
 using namespace std;
 
 // so its important to note the following 
@@ -105,7 +106,8 @@ but space wise itll be
 
   */
 
-int getNthFib(int n) {
+int getNthFib(int n) 
+{
   // Write your code here.
 
   // this is the naive solution

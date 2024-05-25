@@ -15,10 +15,14 @@ sample output :
 
 // solution 1
 using namespace std;
+#include <iostream>
 #include <unordered_set>
+#include <vector>
+#include <string>
 // time 0(n * m) where n is the size of words and m is the size of the longest word in the string
 // space 0(n * m)
-vector<vector<string>> semordnilap(vector<string> words) {
+vector<vector<string>> semordnilap(vector<string> words) 
+{
   // Write your code here.
   std::unordered_set<string> wordsSet(words.begin(), words.end());
   std::vector<std::vector<string>> semordnilapPairs ;
@@ -56,6 +60,8 @@ optimal space and time complexity
 
 
 // solution 2
+
+
 using namespace std;
 #include <unordered_set>
 // time 0(n * m) where n is the size of words and m is the size of the longest word in the string
@@ -79,3 +85,20 @@ vector<vector<string>> semordnilap(vector<string> words) {
   return semordnilapPairs;
 }
 
+
+
+
+int main()
+{
+    std::vector<string> words = {"diaper", "abc", "test", "cba", "repaid"};
+    std::vector<std::vector<std::string>> output = semordnilap(words);
+    for(int i = 0; i < output.size(); i++)
+    {
+        for(int j = 0; j < output[i].size(); j++)
+        {
+            std::cout << " the output is :" << output[i][j] << std::endl;
+        }      
+    }
+    return 1;
+
+}

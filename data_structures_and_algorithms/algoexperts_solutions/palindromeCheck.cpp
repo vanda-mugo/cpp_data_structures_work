@@ -3,10 +3,12 @@ write a function that takes in a non empty string and that returns a boolean rep
 a palindrome is defined as a string that is written the same backwards and forwards. note by that single characters strings are palindromes */
 
 //solution 1
+#include <string>
+
 using namespace std;
 // time complexity 0(N) and space complexity 0(1)
 
-bool isPalindrome(string str) 
+bool isPalindrome(std::string str) 
 {
   // Write your code here.
   int leftIndex = 0;

@@ -192,6 +192,13 @@ this is because you are not storing frames in the call stack
 
 
 so conceptual overview of algoritm involved 
+so note that with iterative approach we have a space complexity of 0(1) for both average and worst case scenarios since we shall not be storing up frames 
+in the call stack but time complexity remains to be 0(logN) for average case scenarios and 0(N) for the worst case scenarios
+
+however if the algoritm is approached recursively then we shall have 0(log N ) for both space and time complexity on average case scenarios and 0(N) for worst 
+case scenarios for both the space and the time complexity which can be thought of as 0(logD) average case scenario where D is the lenght of the longest branch ]
+
+
 
 */
 
@@ -217,6 +224,8 @@ class BST
   {    
   }
 
+// average : 0(log(N)) time | 0(1) space since we are implementing the method iteratively
+// worst : 0(N) time | O(1) space 
   BST& insert(int val) 
 {
     // Write your code here.

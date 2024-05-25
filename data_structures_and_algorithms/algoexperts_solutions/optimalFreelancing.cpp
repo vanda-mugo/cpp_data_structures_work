@@ -24,8 +24,12 @@ jobs = [
 //using namespace std;
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
+#include <unordered_set>
+#include <string>
 
-int optimalFreelancing(std::vector<unordered_map<string, int>> jobs)
+
+int optimalFreelancing(std::vector<std::unordered_map<std::string, int>> jobs)
 {
   // the parameter input is a std::unordered_map that contains the string and int values 
   // Write your code here.
