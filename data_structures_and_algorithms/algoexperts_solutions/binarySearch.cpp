@@ -78,7 +78,7 @@ int binarySearch(std::vector<int> array, int target)
 
 // solution 2
 // iterative solution 
-// time complexity 0(logN) and constant space 0
+// time complexity 0(logN) and constant space 0(1)
 #include <vector>
 using namespace std;
 
