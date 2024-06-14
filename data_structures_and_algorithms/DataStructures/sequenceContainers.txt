@@ -1,0 +1,47 @@
+sequence container keeps elements in the order we specify when adding elements to the container 
+
+sequence containers are as above 
+
+std::array
+std::vector
+std::deque
+std::list
+std::forward_list
+
+with the std::vector you can take advantage of the emplace_back() function which will create the object
+in place for you instead of creating an object and then copying/moving it to the vector using the push_back()
+function
+
+vector_name.emplace_back(value_to_add)
+
+
+the capacity of a vector can change in the following ways
+
+by adding an element to the vector when the capacity == size
+by calling reserve()
+by calling shrink_to_fit()
+
+
+
+deque
+
+sometimes you find yourself in a situation in which you need to add elements both in the beginning and end of a sequence 
+a std::deque is the best to use in such a circumstance which means double-ended queue.
+
+
+
+note by that we have sequence containers as already indicated in the beginning of this text file 
+
+we have associative containters 
+std::set
+std::multiset
+std::map
+std::multimap
+
+
+unordered associative containers 
+
+std::unordered_set
+std::unordered_multiset
+std::unordered_map
+std::unordered_multimap

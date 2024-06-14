@@ -1,4 +1,10 @@
 /*
+HASH TABLES 
+Examples in c++
+std::unordered_map
+std::unordered_set
+
+
 Hash table store values in key value pairs where the key is a unique integer that is used for indexing
 the values where value is the data that is associated with the key
 
@@ -135,6 +141,8 @@ where each bucket in the hash array contains a linked list of key-value pairs.
 #include <list>
 #include <string>
 
+#include <unordered_map>
+#include <unordered_set>
 // A structure to store a key-value pair
 struct KeyValuePair 
 {
@@ -144,12 +152,7 @@ struct KeyValuePair
 };
 
 // Hash table class
-class HashTable 
-/*
 
-*/
-{
-private:
 /*
 std::vector: This is a dynamic array that can change size. 
 It provides random access to elements and efficient insertions and deletions at the end.*/
@@ -163,7 +166,47 @@ but is optimal for operations that frequently insert or remove elements.*/
 KeyValuePair: This is a user-defined structure that holds a key and a value. For a hash table,
  this typically means a key-value pair for storing data entries.*/
 
+/*
+Vector index:      0        1        2        3        4
+                  +--------+--------+--------+--------+--------+
+                  | List 0 | List 1 | List 2 | List 3 | List 4 |
+                  +--------+--------+--------+--------+--------+
+                   /         |         \         |         \
+                +------------+      +-----------+       +--------+
+                |            |      |           |       |        |
+           +----------+ +----------+ +-------+ +----------+ +----------+
+           |("key1",  | |("key3",  | |("key4",| |("key6",  | |("key7",  |
+           | "value1")| | "value3")| | "value4")| | "value6")| | "value7")|
+           +----------+ +----------+ +-------+ +----------+ +----------+
+           |("key2",  |             |("key5",|                       |
+           | "value2")|             | "value5")                      |
+           +----------+             +-------+                       |
+                                                                     |
 
+Vector Initialization:
+
+    The vector has 5 elements (indices 0 through 4).
+List 0:
+
+    Contains two pairs: ("key1", "value1") and ("key2", "value2").
+List 1:
+
+    Contains one pair: ("key3", "value3").
+List 2:
+
+    Contains two pairs: ("key4", "value4") and ("key5", "value5").
+List 3:
+
+    Contains one pair: ("key6", "value6").
+List 4:
+
+    Contains one pair: ("key7", "value7").
+
+*/
+class HashTable 
+
+{
+private:
     std::vector<std::list<KeyValuePair>> table;
     size_t tableSize;
 
@@ -193,6 +236,7 @@ public:
     void insert(const std::string& key, const std::string& value) 
     {
         size_t index = hashFunction(key);
+        //note that the std::list has the push_back method 
         table[index].push_back({key, value});
     }
 
@@ -200,6 +244,7 @@ public:
     // indicates the method is a const member function. this means that the method is not allowed to modify the state of the object
     std::string get(const std::string& key) const 
     {
+        // note that the std::vector that is table is a vector in which all the elements are 
         size_t index = hashFunction(key);
         for (const auto& pair : table[index]) 
         {
@@ -244,6 +289,29 @@ int main() {
     return 0;
 }
 
+//visual representation
+
+// consider std::vector<std::list<int>> can be visualized as above 
+/*
+Vector index:      0        1        2        3        4
+                  +--------+--------+--------+--------+--------+
+                  | List 0 | List 1 | List 2 | List 3 | List 4 |
+                  +--------+--------+--------+--------+--------+
+                   /        \         |        \        |
+                +----+     +----+    +----+   +----+  +----+
+                | 1  |     | 2  |    | 3  |   | 4  |  | 5  |
+                +----+     +----+    +----+   +----+  +----+
+                   |          |                   |
+                +----+     +----+               +----+
+                | 6  |     | 7  |               | 8  |
+                +----+     +----+               +----+
+
+Vector index 0 contains List 0 which has elements 1 -> 6.
+Vector index 1 contains List 1 which has elements 2 -> 7.
+*/
+
+
+
 /*
 struct 
 in c++ is user defined data type that allows you to group variables of different types together 
@@ -279,3 +347,57 @@ int main() {
 
     return 0;
 }
+
+//implementation in c++
+//initialization 
+std::unordered_map<std::string, int> umap =
+{
+    {"number_1", 1},
+    {"number_2", 2},
+    {"number_3", 3}
+};
+
+// adding elements 
+umap["number_4"] = 4;
+umap["number_5"] = 5;
+
+//traversing elements of the unordered map 
+for(auto x : umap)
+{
+    std::cout << x.first << " " << x.second << std::endl;
+}
+
+
+/*
+method of unordered_map
+
+    operator =
+    operator []
+    empty
+    size for capacity
+    begin and end for the iterator.
+    find and count for lookup.
+    insert and erase for modification.
+
+    using the at() function 
+    unordered_map.at(k)
+    parameter = key value of the element whose mapped value we want to acess 
+
+    return type: a reference to the mapped value of the element with the key equivalent 
+
+    other methods and functions of unordered_map
+
+    at()
+    begin() : returns an iterator pointing to the first element in the container in the unordered_map container 
+    end(): returns an iterator pointing to the position past the last element in the container in the unordered_map container
+    bucket(): returns a bucket member where the element with the key k is located in the map 
+    bucket_count():Bucket_count is used to count the total no. of buckets in the unordered_map. No parameter is required to pass into this function
+    bucket_size(): Returns the number of elements in each bucket of the unordered_map
+    count() : Count the number of elements present in an unordered_map with a given key
+    equal_range : Return the bounds of a range that includes all the elements in the container with a key that compares equal to k
+    find(): returns an iterator to the element 
+    empty(): checks whether the container is empty in the unordered_map container 
+    erase(): erase element in the container int the unordered_map container 
+
+
+*/
