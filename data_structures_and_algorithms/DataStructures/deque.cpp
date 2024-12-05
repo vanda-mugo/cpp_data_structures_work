@@ -16,7 +16,7 @@ memory cost; a deque holding just one element has to allocate its full internal 
 
 complexity of common operations on deques as follows 
 
-random access 0(1)
+random access 0(n)
 insertion and removal of elements at the end or beginning of  0(1)
 insertion or removal of elements - linear 0(n)
 
